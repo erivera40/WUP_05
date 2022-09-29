@@ -9,6 +9,9 @@ output: html_document
 require(tidyverse)
 require(tigerstats)
 triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
+
+females=filter(triUmp,gender== "F")
+DrugUsers=filter(triUmp,DrugUser=="yes")
 ```
 
 # Introduction
@@ -22,6 +25,17 @@ A new  preventative aids drug (triUmpsal) is under test in clinical trials. Cons
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed, for example sub-setting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+
+1. Is the vaccine effective for drug users?  
+2. Is the vaccine effective for women?
+
+$H_0$: The vaccine is not effective for drug users.   
+$H_A$: The vaccine is effective for drug users.
+
+
+$H_0$: The vaccine is not effective for females.  
+$H_A$: The vaccine is effective for females.  
 
 # Results
 
