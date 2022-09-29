@@ -28,14 +28,16 @@ A new  preventative aids drug (triUmpsal) is under test in clinical trials. Cons
 
 
 1. Is the vaccine effective for drug users?  
-2. Is the vaccine effective for women?
+
 
 $H_0$: The vaccine is not effective for drug users.   
-$H_A$: The vaccine is effective for drug users.
+$H_A$: The vaccine is effective for drug users.     
 
+
+2. Is the vaccine effective for women?  
 
 $H_0$: The vaccine is not effective for females.  
-$H_A$: The vaccine is effective for females.  
+$H_A$: The vaccine is effective for females.    
 
 # Results
 
@@ -96,7 +98,7 @@ barchartGC(~infected + treatment,data=females, type="percent")
 
 ```
 
-Females treated with the vaccine are less susceptible to get AIDS. 
+Females treated with the vaccine are more susceptible to get AIDS. 
 
 
 ### Numerical Descriptive Results
@@ -108,7 +110,7 @@ table1 <- xtabs(~infected + treatment, data=females)
 rowPerc(table1)
 colPerc(table1)
 ```
-Among all females who were infected with AIDS, 58% of them had received the vaccine and 48% of those who were infected received the placebo. This suggests females who received the vaccine were less susceptible to get AIDS.   
+Among all females who were infected with AIDS, 58% of them had received the vaccine and 48% of those who were infected received the placebo. This suggests females who received the vaccine were more susceptible to get AIDS.   
 
 
 
@@ -124,16 +126,18 @@ fisher.test(table1)
 ```
 
 
-The p-value is 0.00007686 which is smaller than 0.05, so we reject the null hypothesis. This shows the vaccine is effective in the female community.  
+The p-value is 0.00007686 which is smaller than 0.05, so we reject the null hypothesis. This shows the vaccine is not effective in the female community.  
 
 
 
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the George Town videos collection.!
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhaps are related for some other reason.  Watch the chapter 6 videos from the George Town videos collection.!
 
 Report on both Drug Users and Females.  Be sure to include the odds for both groups.
 -->
 
- 
+1. Based on the following, it demonstrates drug users who have received the treatment vaccine are less susceptible to get infected with AIDS. The vaccine is effective for drug users. We reject the null hypothesis.
+
+2. Based on the following, it demonstrates females who have received the treatment vaccine are more susceptible to get infected with AIDS. The vaccine is not effective for females. We reject the null hypothesis. 
