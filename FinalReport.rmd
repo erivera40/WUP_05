@@ -41,7 +41,7 @@ $H_A$: The vaccine is effective for females.
 
 <!--Divide this section into two sub-sections:  One for your descriptive results and one for your inferential results.!-->
 
-## Descriptive Results
+## Descriptive Results for Drug Users
 
 ### Graphical Descriptive Results
 
@@ -73,6 +73,62 @@ Among all drug users who were infected with AIDS, 24% of them had received the v
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfies the assumptions and is appropriate to answer the research question!-->
   
+  
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+The p-value is 0.0000001242 which is smaller than 0.05, so we reject the null hypothesis. This shows the vaccine is effective in the drug user community.  
+
+
+## Descriptive Results for Females
+
+### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe patterns, if any, that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming to or departing from what is expected by the null hypothesis !-->
+
+```{r}
+barchartGC(~infected + treatment,data=females)
+barchartGC(~infected + treatment,data=females, type="percent")
+
+```
+
+Females treated with the vaccine are less susceptible to get AIDS. 
+
+
+### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns, if any, that exist in the data as focused toward the research question!-->
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=females)
+rowPerc(table1)
+colPerc(table1)
+```
+Among all females who were infected with AIDS, 58% of them had received the vaccine and 48% of those who were infected received the placebo. This suggests females who received the vaccine were less susceptible to get AIDS.   
+
+
+
+## Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfies the assumptions and is appropriate to answer the research question!-->
+  
+  
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+The p-value is 0.00007686 which is smaller than 0.05, so we reject the null hypothesis. This shows the vaccine is effective in the female community.  
+
+
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the George Town videos collection.!
